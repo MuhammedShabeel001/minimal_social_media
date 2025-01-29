@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:social_media/view/pages/filter_page.dart';
 import 'package:social_media/view/widgets/app_bar.dart';
 import 'package:social_media/view/widgets/icon_text_button.dart';
 import '../../controller/image_provider.dart';
@@ -15,12 +16,17 @@ class NewPostPage extends StatelessWidget {
         appBar: MyAppBar(
           actions: [
             TextButton(
-                onPressed: () {},
-                child: Text(
-                  'Next',
-                  style: TextStyle(
-                      fontSize: 18, color: Color.fromRGBO(209, 109, 242, 1)),
-                ))
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => FilterPage(),));
+              },
+              child: Text(
+                'Next',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Color.fromRGBO(209, 109, 242, 1),
+                ),
+              ),
+            ),
           ],
         ),
         body: Padding(
@@ -39,14 +45,28 @@ class NewPostPage extends StatelessWidget {
                   SizedBox(
                     child: Row(
                       spacing: 10,
-                      children: [Text('Recents',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600),), Icon(Icons.keyboard_arrow_down_outlined)],
+                      children: [
+                        Text(
+                          'Recents',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.w600),
+                        ),
+                        Icon(Icons.keyboard_arrow_down_outlined)
+                      ],
                     ),
                   ),
-                  SizedBox(child: Row(
+                  SizedBox(
+                      child: Row(
                     spacing: 20,
                     children: [
-                      SvgPicture.asset('assets/icons/icon3.svg',height: 20,), 
-                      SvgPicture.asset('assets/icons/icon2.svg',height: 20,), 
+                      SvgPicture.asset(
+                        'assets/icons/icon3.svg',
+                        height: 20,
+                      ),
+                      SvgPicture.asset(
+                        'assets/icons/icon2.svg',
+                        height: 20,
+                      ),
                     ],
                   ))
                 ],
@@ -65,10 +85,13 @@ class NewPostPage extends StatelessWidget {
                   IconTextButton(
                       text: 'Videos',
                       icon: 'assets/icons/icon2.svg',
-                      ontap: () {}), 
+                      ontap: () {}),
                 ],
               ),
-              Expanded(child: Container(color: Colors.blueAccent,))
+              Expanded(
+                  child: Container(
+                color: Colors.blueAccent,
+              ))
             ],
           ),
         ));
