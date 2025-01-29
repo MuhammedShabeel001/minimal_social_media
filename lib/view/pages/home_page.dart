@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:social_media/view/pages/new_post_page.dart';
+import 'package:social_media/view/widgets/text_button.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,17 +10,13 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(20), 
+          padding: const EdgeInsets.all(20),
           child: SizedBox(
             height: 45,
-            width: 312, 
-            child: ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromRGBO(209, 109, 242, 1),
-                // textStyle: TextStyle(color: Colors.white, )
-              ),
-              child: Text('Start', style: TextStyle(color: Colors.white,fontSize: 20),),
+            width: 312,
+            child: MyTextButton(
+              text: 'Start',
+              ontap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => NewPostPage(),));},
             ),
           ),
         ),
