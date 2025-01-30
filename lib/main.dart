@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:social_media/controller/image_provider.dart';
+import 'package:social_media/view/pages/caption_page.dart';
 import 'package:social_media/view/pages/filter_page.dart';
+import 'package:social_media/view/pages/add_page.dart';
 import 'package:social_media/view/pages/home_page.dart';
 import 'package:social_media/view/pages/new_post_page.dart';
 
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-      home: FilterPage()
+      home: HomePage()
       ),
     );
   }
